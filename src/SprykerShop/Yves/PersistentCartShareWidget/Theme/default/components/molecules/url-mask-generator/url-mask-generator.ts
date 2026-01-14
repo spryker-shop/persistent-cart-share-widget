@@ -11,10 +11,11 @@ export default class UrlMaskGenerator extends Component {
         this.provider = <AjaxProvider>(
             this.getElementsByClassName(`${this.jsName}__provider-${this.shareOptionGroup}`)[0]
         );
-        this.trigger = <HTMLInputElement>(this.triggerClassName
-            ? this.getElementsByClassName(this.triggerClassName)[0]
-            : // eslint-disable-next-line deprecation/deprecation
-              this.querySelector(this.triggerSelector));
+        this.trigger = <HTMLInputElement>(
+            (this.triggerClassName
+                ? this.getElementsByClassName(this.triggerClassName)[0]
+                : this.querySelector(this.triggerSelector))
+        );
 
         this.mapEvents();
     }
