@@ -20,10 +20,5 @@ interface PersistentCartShareWidgetToPersistentCartShareClientInterface
      */
     public function getCartShareOptions(?CustomerTransfer $customerTransfer): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareResponseTransfer
-     */
     public function generateCartResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): ResourceShareResponseTransfer;
 }

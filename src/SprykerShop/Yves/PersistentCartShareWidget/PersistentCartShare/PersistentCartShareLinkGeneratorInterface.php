@@ -31,8 +31,5 @@ interface PersistentCartShareLinkGeneratorInterface
      */
     public function generateCartShareLinkLabels(array $shareOptions, int $idQuote, string $shareOptionGroup): array;
 
-    /**
-     * @return array
-     */
     public function generateShareOptionGroups(): array;
 }

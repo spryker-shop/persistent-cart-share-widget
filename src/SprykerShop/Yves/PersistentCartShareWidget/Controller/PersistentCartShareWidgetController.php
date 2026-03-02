@@ -15,12 +15,6 @@ use SprykerShop\Yves\ShopApplication\Controller\AbstractController;
  */
 class PersistentCartShareWidgetController extends AbstractController
 {
-    /**
-     * @param int $idQuote
-     * @param string $shareOptionGroup
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function indexAction(int $idQuote, string $shareOptionGroup): View
     {
         $response = $this->executeIndexAction($idQuote, $shareOptionGroup);
@@ -28,12 +22,6 @@ class PersistentCartShareWidgetController extends AbstractController
         return $this->view($response, [], '@PersistentCartShareWidget/views/share-cart-response/share-cart-response.twig');
     }
 
-    /**
-     * @param int $idQuote
-     * @param string $shareOptionGroup
-     *
-     * @return array
-     */
     protected function executeIndexAction(int $idQuote, string $shareOptionGroup): array
     {
         $shareOptions = $this->getFactory()

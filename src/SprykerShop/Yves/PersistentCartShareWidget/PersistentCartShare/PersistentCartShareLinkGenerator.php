@@ -49,12 +49,6 @@ class PersistentCartShareLinkGenerator implements PersistentCartShareLinkGenerat
      */
     protected $customerClient;
 
-    /**
-     * @param \SprykerShop\Yves\PersistentCartShareWidget\Dependency\Client\PersistentCartShareWidgetToPersistentCartShareClientInterface $persistentCartShareClient
-     * @param \Spryker\Yves\Router\Router\ChainRouter $router
-     * @param \SprykerShop\Yves\PersistentCartShareWidget\ResourceShare\ResourceShareRequestBuilder $resourceShareRequestBuilder
-     * @param \SprykerShop\Yves\PersistentCartShareWidget\Dependency\Client\PersistentCartShareWidgetToCustomerClientInterface $customerClient
-     */
     public function __construct(
         PersistentCartShareWidgetToPersistentCartShareClientInterface $persistentCartShareClient,
         ChainRouter $router,
@@ -116,11 +110,6 @@ class PersistentCartShareLinkGenerator implements PersistentCartShareLinkGenerat
         return $resourceShareLinkLabels;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareTransfer $cartResourceShare
-     *
-     * @return string
-     */
     protected function buildResourceShareLink(ResourceShareTransfer $cartResourceShare): string
     {
         return $this->router->generate(
@@ -130,9 +119,6 @@ class PersistentCartShareLinkGenerator implements PersistentCartShareLinkGenerat
         );
     }
 
-    /**
-     * @return array
-     */
     public function generateShareOptionGroups(): array
     {
         $shareOptions = $this->persistentCartShareClient->getCartShareOptions(
@@ -148,22 +134,11 @@ class PersistentCartShareLinkGenerator implements PersistentCartShareLinkGenerat
         return $shareOptionGroups;
     }
 
-    /**
-     * @param string $shareOptionGroupName
-     *
-     * @return string
-     */
     protected function getShareOptionGroupKey(string $shareOptionGroupName): string
     {
         return 'persistent_cart_share.' . $shareOptionGroupName . '_users';
     }
 
-    /**
-     * @param string $shareOptionGroup
-     * @param string $shareOption
-     *
-     * @return string
-     */
     protected function getShareOptionKey(string $shareOptionGroup, string $shareOption): string
     {
         return 'persistent_cart_share.share_options.' . $shareOptionGroup . '.' . $shareOption;

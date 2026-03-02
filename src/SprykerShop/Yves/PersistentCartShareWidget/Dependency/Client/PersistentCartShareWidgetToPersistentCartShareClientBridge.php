@@ -36,11 +36,6 @@ class PersistentCartShareWidgetToPersistentCartShareClientBridge implements Pers
         return $this->persistentCartShareClient->getCartShareOptions($customerTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ResourceShareRequestTransfer $resourceShareRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareResponseTransfer
-     */
     public function generateCartResourceShare(ResourceShareRequestTransfer $resourceShareRequestTransfer): ResourceShareResponseTransfer
     {
         return $this->persistentCartShareClient->generateCartResourceShare($resourceShareRequestTransfer);

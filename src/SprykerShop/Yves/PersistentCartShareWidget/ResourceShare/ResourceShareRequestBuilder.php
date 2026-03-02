@@ -34,20 +34,11 @@ class ResourceShareRequestBuilder implements ResourceShareRequestBuilderInterfac
      */
     protected $customerClient;
 
-    /**
-     * @param \SprykerShop\Yves\PersistentCartShareWidget\Dependency\Client\PersistentCartShareWidgetToCustomerClientInterface $customerClient
-     */
     public function __construct(PersistentCartShareWidgetToCustomerClientInterface $customerClient)
     {
         $this->customerClient = $customerClient;
     }
 
-    /**
-     * @param int $idQuote
-     * @param string $shareOption
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareRequestTransfer
-     */
     public function buildResourceShareRequest(int $idQuote, string $shareOption): ResourceShareRequestTransfer
     {
         $customerTransfer = $this->customerClient->getCustomer();
@@ -64,13 +55,6 @@ class ResourceShareRequestBuilder implements ResourceShareRequestBuilderInterfac
         return $resourceShareRequestTransfer;
     }
 
-    /**
-     * @param int $idQuote
-     * @param string $shareOption
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareDataTransfer
-     */
     protected function createResolvedByShareOptionResourceShareDataTransfer(
         int $idQuote,
         string $shareOption,
@@ -83,11 +67,6 @@ class ResourceShareRequestBuilder implements ResourceShareRequestBuilderInterfac
         return $this->createCartShareResourceShareDataTransfer($idQuote, $shareOption, $customerTransfer);
     }
 
-    /**
-     * @param int $idQuote
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareDataTransfer
-     */
     protected function createCartPreviewResourceShareDataTransfer(int $idQuote): ResourceShareDataTransfer
     {
         return (new ResourceShareDataTransfer())
@@ -95,13 +74,6 @@ class ResourceShareRequestBuilder implements ResourceShareRequestBuilderInterfac
             ->setShareOption(static::SHARE_OPTION_KEY_PREVIEW);
     }
 
-    /**
-     * @param int $idQuote
-     * @param string $shareOption
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareDataTransfer
-     */
     protected function createCartShareResourceShareDataTransfer(
         int $idQuote,
         string $shareOption,

@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\CustomerTransfer;
 
 interface PersistentCartShareWidgetToCustomerClientInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\CustomerTransfer|null
-     */
     public function getCustomer(): ?CustomerTransfer;
 }

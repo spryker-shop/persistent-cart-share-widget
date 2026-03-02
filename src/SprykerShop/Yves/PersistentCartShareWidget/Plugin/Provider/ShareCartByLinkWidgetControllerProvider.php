@@ -20,11 +20,6 @@ class ShareCartByLinkWidgetControllerProvider extends AbstractYvesControllerProv
      */
     public const CART_CREATE_LINK = 'cart/create-link';
 
-    /**
-     * @param \Silex\Application $app
-     *
-     * @return void
-     */
     protected function defineControllers(Application $app): void
     {
         $this->addCreateLinkRoute();

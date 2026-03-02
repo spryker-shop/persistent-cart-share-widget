@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\ResourceShareRequestTransfer;
 
 interface ResourceShareRequestBuilderInterface
 {
-    /**
-     * @param int $idQuote
-     * @param string $shareOption
-     *
-     * @return \Generated\Shared\Transfer\ResourceShareRequestTransfer
-     */
     public function buildResourceShareRequest(int $idQuote, string $shareOption): ResourceShareRequestTransfer;
 }
