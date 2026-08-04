@@ -7,7 +7,7 @@ export default class UrlMaskGenerator extends Component {
     protected trigger: HTMLInputElement;
     protected isActionsRendered = false;
 
-    protected readyCallback(): void {
+    protected init(): void {
         this.provider = <AjaxProvider>(
             this.getElementsByClassName(`${this.jsName}__provider-${this.shareOptionGroup}`)[0]
         );

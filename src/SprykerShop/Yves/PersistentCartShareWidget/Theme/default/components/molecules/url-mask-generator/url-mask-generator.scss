@@ -1,6 +1,12 @@
+@use 'sass:meta';
+
 @mixin persistent-cart-share-widget-url-mask-generator($name: '.url-mask-generator') {
     #{$name} {
         position: relative;
+
+        @if meta.mixin-exists(persistent-cart-share-widget-url-mask-generator-base-hook) {
+            @include persistent-cart-share-widget-url-mask-generator-base-hook;
+        }
 
         @content;
     }
